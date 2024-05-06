@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="breastCancer" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="Age">
+			<state id="faux" />
+			<state id="vrai" />
+			<probabilities>0.03607154543843378 0.9639284545615662</probabilities>
+		</cpt>
+		<cpt id="Irradiat">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.7613240418118467 0.2386759581881533</probabilities>
+		</cpt>
+		<cpt id="Breast">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Irradiat</parents>
+			<probabilities>0.5365296803652968 0.4634703196347032 0.5144927536231884 0.4855072463768116</probabilities>
+		</cpt>
+		<cpt id="Breast_quad">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Breast</parents>
+			<probabilities>0.1711370530880427 0.8288629469119573 0.04411425252120358 0.9558857474787964</probabilities>
+		</cpt>
+		<cpt id="Tumor_size">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.2922664591053769 0.7077335408946233</probabilities>
+		</cpt>
+		<cpt id="Inv_nodes">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Tumor_size</parents>
+			<probabilities>0.9620382235634002 0.03796177643659984 0.9817865205045748 0.01821347949542529</probabilities>
+		</cpt>
+		<cpt id="Node_caps">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Breast_quad Inv_nodes</parents>
+			<probabilities>0.215475787397089 0.7845242126029108 0.5243052808802832 0.4756947191197168 0.01220984019988209 0.9877901598001178 0.4391958048548555 0.5608041951451446</probabilities>
+		</cpt>
+		<cpt id="Class">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Inv_nodes Node_caps Tumor_size</parents>
+			<probabilities>0.5704338207605915 0.4295661792394085 0.4678067003058009 0.532193299694199 0.5104374441221222 0.4895625558778778 0.7980561078585654 0.2019438921414347 0.4576479989641752 0.5423520010358247 0.4387093774665963 0.5612906225334036 0.4271592004615494 0.5728407995384507 0.4163083316191011 0.5836916683808989</probabilities>
+		</cpt>
+		<cpt id="Menopause">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Age</parents>
+			<probabilities>0.8039623774445499 0.1960376225554502 0.9493642899886378 0.0506357100113622</probabilities>
+		</cpt>
+		<cpt id="Deg_malig">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Age Irradiat Menopause Tumor_size Node_caps Class</parents>
+			<probabilities>0.5010875415207812 0.498912458479219 0.5004978372492521 0.4995021627507479 0.5456713894957601 0.4543286105042401 0.5351313526165653 0.4648686473834347 0.5019719315208434 0.4980280684791566 0.5011548249677692 0.4988451750322308 0.6879211428031308 0.3120788571968693 0.5357390529612768 0.4642609470387232 0.5000995153592618 0.4999004846407383 0.4788474329506295 0.5211525670493705 0.5264826496469522 0.4735173503530476 0.5035011228789358 0.4964988771210642 0.500184111003967 0.499815888996033 0.4364245320548674 0.5635754679451327 0.5317028359898571 0.4682971640101428 0.5035732550960634 0.4964267449039365 0.4965321243223226 0.5034678756776774 0.4974126736355653 0.5025873263644347 0.5067454222281563 0.4932545777718438 0.5076920404985612 0.4923079595014389 0.4964154479529355 0.5035845520470644 0.4935749970819404 0.5064250029180596 0.5429276770206219 0.4570723229793781 0.5079320290320724 0.4920679709679277 0.5015119428201722 0.4984880571798277 0.5001109938098454 0.4998890061901547 0.4985553803139905 0.5014446196860095 0.5010192469323896 0.4989807530676102 0.5030417865047873 0.4969582134952129 0.5002574718610774 0.4997425281389227 0.4962560014176559 0.5037439985823441 0.5010455187703763 0.4989544812296238 0.5361824173823464 0.4638175826176536 0.5246086170671573 0.4753913829328427 0.6234996229793447 0.3765003770206553 0.792622403514082 0.2073775964859181 0.5644108728468276 0.4355891271531726 0.5574797555102962 0.4425202444897038 0.5819986048089587 0.4180013951910412 0.6492109073431389 0.3507890926568611 0.5008676547109592 0.4991323452890408 0.3639922868561264 0.6360077131438736 0.610413098567846 0.389586901432154 0.4930292144491447 0.5069707855508554 0.501573591525973 0.4984264084740269 0.2064086090944622 0.7935913909055378 0.3856303599164784 0.6143696400835215 0.4765406953949256 0.5234593046050745 0.4042753281721098 0.5957246718278901 0.4230204149887691 0.5769795850112309 0.7680363400009808 0.2319636599990193 0.7743039476872858 0.2256960523127143 0.4012745324909053 0.5987254675090947 0.3284446563250851 0.6715553436749149 0.9390331730263525 0.06096682697364754 0.7752595469469196 0.2247404530530805 0.5107358465858743 0.4892641534141258 0.5007712585203257 0.4992287414796744 0.4988438376079977 0.5011561623920023 0.5153249070669543 0.4846750929330457 0.5214907180830074 0.4785092819169927 0.501788978148065 0.498211021851935 0.5081036102919266 0.4918963897080734 0.515663792410881 0.484336207589119</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 4.1.3724.0 ACADEMIC" name="breastCancer">
+			<node id="Age">
+				<name>Age</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>57 82 128 133</position>
+			</node>
+			<node id="Irradiat">
+				<name>Irradiat</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>179 85 262 133</position>
+			</node>
+			<node id="Breast">
+				<name>Breast</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>309 89 372 126</position>
+			</node>
+			<node id="Breast_quad">
+				<name>Breast_quad</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>453 43 533 94</position>
+			</node>
+			<node id="Tumor_size">
+				<name>Tumor_size</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>473 128 560 171</position>
+			</node>
+			<node id="Inv_nodes">
+				<name>Inv_nodes</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>648 108 733 141</position>
+			</node>
+			<node id="Node_caps">
+				<name>Node_caps</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>915 36 1005 77</position>
+			</node>
+			<node id="Menopause">
+				<name>Menopause</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>105 230 189 284</position>
+			</node>
+			<node id="Deg_malig">
+				<name>Deg_malig</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>439 265 528 306</position>
+			</node>
+			<node id="Class">
+				<name>Class</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>862 257 914 289</position>
+			</node>
+		</genie>
+	</extensions>
+</smile>
